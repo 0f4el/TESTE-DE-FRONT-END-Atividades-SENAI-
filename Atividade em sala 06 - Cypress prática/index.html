@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro Simples</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; }
+        .container { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); width: 300px; }
+        h2 { text-align: center; color: #333; }
+        .form-group { margin-bottom: 15px; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="email"], input[type="password"] { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #0056b3; }
+        #mensagem { text-align: center; margin-top: 20px; padding: 10px; border-radius: 4px; font-weight: bold; display: none; }
+        .sucesso { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .erro { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Cadastro de Usuário</h2>
+        <form id="cadastroForm">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email">
+            </div>
+            <div class="form-group">
+                <label for="usuario">Usuário:</label>
+                <input type="text" id="usuario">
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha (mín. 8 dígitos):</label>
+                <input type="password" id="senha" minlength="8">
+            </div>
+            <div class="form-group">
+                <label for="confirmaSenha">Confirmar Senha:</label>
+                <input type="password" id="confirmaSenha">
+            </div>
+            <button type="submit" id="btnCadastrar">Cadastrar</button>
+        </form>
+        <div id="mensagem" style="display: none;"></div>
+    </div>
+
+    <script>
+        document.getElementById('cadastroForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const usuario = document.getElementById('usuario').value;
+            const senha = document.getElementById('senha').value;
+            const confirmaSenha = document.getElementById('confirmaSenha').value;
+            const mensagemDiv = document.getElementById('mensagem');
+            
+            mensagemDiv.style.display = 'block';
+            mensagemDiv.className = '';
+
+            const validarEmail = (email) => {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(String(email).toLowerCase());
+            };
+
+            if (!nome || !email || !usuario || !senha || !confirmaSenha) {
+                mensagemDiv.classList.add('erro');
+                mensagemDiv.textContent = 'Erro: Por favor, preencha todos os campos.';
+                return;
+            }
+
+            if (!validarEmail(email)) {
+                mensagemDiv.classList.add('erro');
+                mensagemDiv.textContent = 'Erro: Por favor, insira um endereço de e-mail válido.';
+                return;
+            }
+
+            if (senha.length < 8) {
+                mensagemDiv.classList.add('erro');
+                mensagemDiv.textContent = 'Erro: A senha deve ter pelo menos 8 dígitos.';
+                return;
+            }
+
+            if (senha !== confirmaSenha) {
+                mensagemDiv.classList.add('erro');
+                mensagemDiv.textContent = 'Erro: As senhas não coincidem.';
+                return;
+            }
+
+            mensagemDiv.classList.add('sucesso');
+            mensagemDiv.textContent = 'Cadastro realizado com sucesso!';
+
+        });
+        const campos = ['nome', 'email', 'usuario', 'senha', 'confirmaSenha'];
+        
+        campos.forEach(campoId => {
+        document.getElementById(campoId).addEventListener('input', function() {
+            const mensagemDiv = document.getElementById('mensagem');
+                if (mensagemDiv.style.display === 'block') {
+                    mensagemDiv.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
