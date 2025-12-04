@@ -74,37 +74,37 @@ O **RACK+** é um sistema web de monitoramento de salas de servidores. A aplica�
 ## TEESTE REALIZADOS  
 
    ## CASO DE TESTE 1 > Validação de Conteúdo e Elementos Estáticos  
-      ### Verificação do Conteúdo do Head
-      - Metadados (charset, viewport, título)
-      - Recursos externos (Bootstrap, CSS)
-      - Favicon 
-      
-      ### Verificação do Conteúdo do Body
-      #### Resposividade Desktop
-      - Barra lateral visível
-      - Grid de 3 colunas para cards
-      - Navegação completa com 6 ícones
-      
-      #### Responsividade mobile
-      - Navbar móvel com 3 ícones (Menu, Logo, Usuário)
-      - Menu offcanvas funcional
-      - Grid de 2 colunas para cards
-      - Campo de pesquisa visível
-      
-      #### Conteúdo Principal
-      - 6 cards de salas com estrutura completa
-      - Status correto para cada sala
-      - Links funcionais com segurança (rel="noopener noreferrer")
+   ### Verificação do Conteúdo do Head
+   - Metadados (charset, viewport, título)
+   - Recursos externos (Bootstrap, CSS)
+   - Favicon 
+   
+   ### Verificação do Conteúdo do Body
+   #### Resposividade Desktop
+   - Barra lateral visível
+   - Grid de 3 colunas para cards
+   - Navegação completa com 6 ícones
+   
+   #### Responsividade mobile
+   - Navbar móvel com 3 ícones (Menu, Logo, Usuário)
+   - Menu offcanvas funcional
+   - Grid de 2 colunas para cards
+   - Campo de pesquisa visível
+   
+   #### Conteúdo Principal
+   - 6 cards de salas com estrutura completa
+   - Status correto para cada sala
+   - Links funcionais com segurança (rel="noopener noreferrer")
    
    ## CASO DE TESTE 2 > Teste de Componentes Interativos e suas Funcionalidades
-      #### Teste se links externos abrem em nova aba com segurança
-      - Proteção contra links externos
-      - Validação de atributos `target="_blank"` e `rel="noopener noreferrer"`
-      
-      #### Testa se o link para página Pokémon funciona
-      - Acesso à página Pokémon a partir da barra lateral
-      
-      #### Testa se a barra lateral mobile aparece quando clicado no botão menu
-      - Menu offcanvas funcional (abre/fecha corretamente)
+   #### Teste se links externos abrem em nova aba com segurança
+   - Proteção contra links externos
+   - Validação de atributos `target="_blank"` e `rel="noopener noreferrer"`
+   
+   #### Testa se o link para página Pokémon funciona
+   - Acesso à página Pokémon a partir da barra lateral
+   
+   #### Testa se a barra lateral mobile aparece quando clicado no botão menu
+   - Menu offcanvas funcional (abre/fecha corretamente)
 
 
