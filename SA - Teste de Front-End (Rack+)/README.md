@@ -64,16 +64,15 @@ O **RACK+** é um sistema web de monitoramento de salas de servidores. A aplica�
 ### Passo 3: Executar os Testes
 
    1. Abra o cmd novamente na pasta do Projeto
-   2. Execute o comando:
-   npx cypress open
+   2. Execute o comando: `npx cypress open`
    3. Devera abrir a Interface do Cypress
    4. Escolha o Teste E2E
    5. Escolha qual navegador vai executar o Software
    6. Dentre os specs escolha qual teste devera roda ( tanto "Homepage-Rack+_teste.cy" , quanto "Login-Rack+_teste.cy")
 
-## TEESTE REALIZADOS  
-
-   ## CASO DE TESTE 1 > Validação de Conteúdo e Elementos Estáticos  
+# TESTE REALIZADOS
+   ## HomePage
+   ## CASO DE TESTE 1 - Validação de Conteúdo e Elementos Estáticos  
    ### Verificação do Conteúdo do Head
    - Metadados (charset, viewport, título)
    - Recursos externos (Bootstrap, CSS)
@@ -96,7 +95,7 @@ O **RACK+** é um sistema web de monitoramento de salas de servidores. A aplica�
    - Status correto para cada sala
    - Links funcionais com segurança (rel="noopener noreferrer")
    
-   ## CASO DE TESTE 2 > Teste de Componentes Interativos e suas Funcionalidades
+   ## CASO DE TESTE 2 - Teste de Componentes Interativos e suas Funcionalidades
    #### Teste se links externos abrem em nova aba com segurança
    - Proteção contra links externos
    - Validação de atributos `target="_blank"` e `rel="noopener noreferrer"`
