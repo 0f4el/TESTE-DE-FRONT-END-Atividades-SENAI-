@@ -64,11 +64,43 @@ O **RACK+** é um sistema web de monitoramento de salas de servidores. A aplica�
    3. Devera abrir a Interface do Cypress
    4. Escolha o Teste E2E
    5. Escolha qual navegador vai executar o Software
-   6. Dentre os specs escolha qual teste devera roda ( tanto "Homepage-Rack+_teste.cy" , quanto "Login-Rack+_teste.cy")
+   6. Dentre os specs escolha qual teste devera roda ( tanto 'Homepage-Rack+_teste.cy' , quanto "Login-Rack+_teste.cy")
 
 # TESTE REALIZADOS
+## LOGIN
+### CASO DE TESTE 1 - Validação de Conteúdo e Elementos Estáticos
+#### Verificação do Conteúdo do Head
+   - Confere se o título, metadados, favicon e arquivos CSS estão carregados corretamente.
+
+#### Verificação do Conteúdo do Body
+   - Verifica logo, textos, campos de email e senha, labels, botão de login, links e scripts da página.
+
+#### Deve ter responsividade correta
+   - Testa a página em diferentes tamanhos de tela (celular, tablet, notebook) para garantir que os elementos continuam visíveis e adequados.
+
+#### Deve ter estilos CSS aplicados corretamente
+   - Confirma background, bordas, sombra, estilos do botão e efeitos como hover.
+
+### CASO DE TESTE 2 - Interações do Usuário na Página de Login
+#### Deve alternar visibilidade da senha ao clicar no ícone
+   - Verifica se o campo de senha muda entre “password” e “text” ao clicar no ícone, e se o ícone muda junto (olho aberto/fechado).
+
+#### Deve mostrar mensagem de erro ao deixar campos vazios
+   - Testa o login com email ou senha vazios e confirma que aparece a mensagem “Por favor, preencha todos os campos.”
+
+#### Deve aplicar efeito de tremer na mensagem de erro
+   - Garante que a mensagem de erro recebe a animação de "shake" e depois a animação some.
+
+### CASO DE TESTE 3 - Fluxo de Login
+#### Deve fazer login com credenciais corretas
+   - Preenche email e senha válidos e verifica se ocorre o redirecionamento para a homepage.
+
+#### Deve mostrar erro com credenciais incorretas
+   - Usa dados errados e confirma a exibição da mensagem “E-mail ou senha incorretos”, além de garantir que não ocorre redirecionamento.
+
+---
 ## HomePage
-### CASO DE TESTE 1 - Validação de Conteúdo e Elementos Estáticos  
+### CASO DE TESTE 1 - Validação de Conteúdo e Elementos Estáticos
 #### Verificação do Conteúdo do Head
    - Metadados (charset, viewport, título)
    - Recursos externos (Bootstrap, CSS)
@@ -101,5 +133,3 @@ O **RACK+** é um sistema web de monitoramento de salas de servidores. A aplica�
    
 #### Testa se a barra lateral mobile aparece quando clicado no botão menu
    - Menu offcanvas funcional (abre/fecha corretamente)
-
-
