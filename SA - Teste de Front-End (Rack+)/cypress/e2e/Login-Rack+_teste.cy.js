@@ -2,7 +2,7 @@
 describe('Teste E2E da página de Login do Rack+', () => {
 
   // Define a URL base para navegação
-  const URL_login = 'http://127.0.0.1:5500/SA%20-%20Teste%20de%20Front-End%20(Rack+)/login/loginhtml.html'
+  const URL_login = 'http://127.0.0.1:5500/login/loginhtml.html'
 
   // Hook que é executado antes de cada teste (navegar para a página)
   beforeEach(() => {
